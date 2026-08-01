@@ -1,0 +1,342 @@
+/* ===========================================================
+   Meridian Coffee Roasters — design tokens
+   =========================================================== */
+:root {
+  --ink: #1c1b17;
+  --ink-soft: #26241e;
+  --paper: #ede6d6;
+  --paper-dim: #e2d9c4;
+  --amber: #c17817;
+  --amber-bright: #e0a23f;
+  --rust: #8b3a2e;
+  --sage: #6b7561;
+  --cream: #f5f0e6;
+  --cream-dim: rgba(245, 240, 230, 0.62);
+  --line: rgba(245, 240, 230, 0.14);
+  --line-dark: rgba(28, 27, 23, 0.12);
+
+  --display: "Fraunces", Georgia, serif;
+  --body: "Inter", -apple-system, sans-serif;
+  --mono: "JetBrains Mono", "Courier New", monospace;
+
+  --radius: 2px;
+  --max: 1180px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  margin: 0 0 0.4em;
+  letter-spacing: -0.01em;
+}
+
+p { color: var(--cream-dim); margin: 0 0 1em; max-width: 62ch; }
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* focus visibility */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--amber-bright);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* ===========================================================
+   Header / nav
+   =========================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(28, 27, 23, 0.88);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+
+.brand {
+  font-family: var(--display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.brand small {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--amber-bright);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+nav.main-nav {
+  display: flex;
+  gap: 2.2rem;
+}
+nav.main-nav a {
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  color: var(--cream-dim);
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+}
+nav.main-nav a:hover, nav.main-nav a[aria-current="page"] {
+  color: var(--cream);
+}
+nav.main-nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -3px;
+  height: 2px;
+  background: var(--amber);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--cream);
+  width: 40px; height: 40px;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  nav.main-nav {
+    position: absolute;
+    top: 76px; left: 0; right: 0;
+    background: var(--ink);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 0;
+    display: none;
+  }
+  nav.main-nav.open { display: flex; }
+  nav.main-nav a { padding: 14px 32px; }
+  .nav-toggle { display: block; }
+}
+
+/* ===========================================================
+   Signature element: the Roast Curve bar
+   A gradient scale from light to dark roast with a marker.
+   Recurs across pages as brand wayfinding.
+   =========================================================== */
+.roast-curve {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+}
+.roast-curve .track {
+  position: relative;
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #d9c9a3 0%, #b8875a 35%, #8b5a2b 60%, #4a2c17 85%, #241209 100%);
+}
+.roast-curve .marker {
+  position: absolute;
+  top: 50%;
+  width: 2px;
+  height: 16px;
+  background: var(--cream);
+  transform: translate(-50%, -50%);
+}
+.roast-curve .marker::after {
+  content: attr(data-label);
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  color: var(--amber-bright);
+}
+
+/* ===========================================================
+   Hero
+   =========================================================== */
+.hero {
+  padding: 96px 0 72px;
+  border-bottom: 1px solid var(--line);
+}
+.hero .eyebrow {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber-bright);
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  line-height: 1.02;
+  max-width: 15ch;
+}
+.hero .lede {
+  font-size: 1.15rem;
+  max-width: 46ch;
+  margin-top: 20px;
+}
+.hero .roast-curve { margin-top: 48px; max-width: 420px; }
+
+.btn-row { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--amber); color: var(--ink); }
+.btn-primary:hover { background: var(--amber-bright); }
+.btn-ghost { border-color: var(--line); color: var(--cream); }
+.btn-ghost:hover { border-color: var(--cream); }
+
+/* ===========================================================
+   Sections
+   =========================================================== */
+section { padding: 84px 0; }
+section + section { border-top: 1px solid var(--line); }
+
+.section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 48px; flex-wrap: wrap; }
+.section-head h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); }
+.section-head .tag { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); }
+
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.grid-2 { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
+@media (max-width: 860px) {
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
+.card {
+  border: 1px solid var(--line);
+  padding: 28px;
+  border-radius: var(--radius);
+  background: var(--ink-soft);
+}
+.card h3 { font-size: 1.15rem; margin-bottom: 10px; }
+.card .num { font-family: var(--mono); font-size: 0.72rem; color: var(--amber-bright); margin-bottom: 14px; display: block; }
+
+/* Paper (light) section variant, used for contrast breaks */
+.section-paper {
+  background: var(--paper);
+  color: var(--ink);
+}
+.section-paper p { color: rgba(28,27,23,0.68); }
+.section-paper .section-head .tag { color: var(--rust); }
+.section-paper h2, .section-paper h1 { color: var(--ink); }
+.section-paper .card { background: var(--paper-dim); border-color: var(--line-dark); }
+
+/* ===========================================================
+   Spec sheet (menu page cupping data) — real, functional labels
+   =========================================================== */
+.spec-sheet {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--ink-soft);
+}
+.spec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 26px 28px 18px;
+  border-bottom: 1px solid var(--line);
+}
+.spec-header h3 { font-size: 1.4rem; margin: 0; }
+.spec-header .price { font-family: var(--mono); font-size: 1rem; color: var(--amber-bright); }
+.spec-body { padding: 22px 28px 28px; }
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 20px;
+}
+.spec-grid dt { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); margin-bottom: 4px; }
+.spec-grid dd { margin: 0; font-size: 0.92rem; }
+@media (max-width: 700px) { .spec-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ===========================================================
+   Footer
+   =========================================================== */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 48px 0;
+}
+footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+footer .foot-links { display: flex; gap: 24px; font-size: 0.85rem; color: var(--cream-dim); }
+footer .foot-links a:hover { color: var(--cream); }
+.fine { font-family: var(--mono); font-size: 0.7rem; color: var(--cream-dim); }
+
+/* ===========================================================
+   Contact form
+   =========================================================== */
+form.contact-form { display: grid; gap: 20px; max-width: 520px; }
+.field { display: grid; gap: 6px; }
+.field label { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sage); }
+.field input, .field textarea {
+  background: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  color: var(--cream);
+  font-family: var(--body);
+  font-size: 0.95rem;
+}
+.field textarea { resize: vertical; min-height: 120px; }
+.field input::placeholder, .field textarea::placeholder { color: rgba(245,240,230,0.35); }
+
+.visit-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 22px; }
+.visit-list li { border-bottom: 1px solid var(--line); padding-bottom: 18px; }
+.visit-list .label { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--amber-bright); display: block; margin-bottom: 6px; }

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu — Meridian Coffee Roasters</title>
+<meta name="description" content="This week's roast lots from Meridian Coffee Roasters, with full cupping specs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Meridian <small>Coffee Roasters</small></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html" aria-current="page">Menu</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom: 40px;">
+    <div class="wrap">
+      <div class="eyebrow">Roasted Tuesday, shipped Wednesday</div>
+      <h1 style="font-size: clamp(2.2rem, 5vw, 3.6rem);">This week's lots</h1>
+      <p class="lede">Full cupping specs for every bag — origin, elevation, process, and roast level, exactly as logged the day we roasted it.</p>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="wrap" style="display: grid; gap: 28px;">
+
+      <article class="spec-sheet">
+        <div class="spec-header">
+          <h3>Chelbesa — Guji, Ethiopia</h3>
+          <span class="price">$22 / 340g</span>
+        </div>
+        <div class="spec-body">
+          <dl class="spec-grid">
+            <div><dt>Process</dt><dd>Washed</dd></div>
+            <div><dt>Elevation</dt><dd>2,050m</dd></div>
+            <div><dt>Variety</dt><dd>Heirloom</dd></div>
+            <div><dt>Roast level</dt><dd>Light City</dd></div>
+          </dl>
+          <p style="margin-bottom: 18px;">Jasmine and bergamot up front, with a black-tea finish and a light, tea-like body. Best on a pour-over.</p>
+          <div class="roast-curve" style="max-width: 320px;">
+            <span>Light</span>
+            <div class="track"><div class="marker" style="left: 24%" data-label="Light City"></div></div>
+            <span>Dark</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="spec-sheet">
+        <div class="spec-header">
+          <h3>La Esperanza — Huila, Colombia</h3>
+          <span class="price">$20 / 340g</span>
+        </div>
+        <div class="spec-body">
+          <dl class="spec-grid">
+            <div><dt>Process</dt><dd>Natural</dd></div>
+            <div><dt>Elevation</dt><dd>1,780m</dd></div>
+            <div><dt>Variety</dt><dd>Caturra</dd></div>
+            <div><dt>Roast level</dt><dd>Full City</dd></div>
+          </dl>
+          <p style="margin-bottom: 18px;">Red grape and panela sweetness with a soft, syrupy body. Holds up well in milk drinks.</p>
+          <div class="roast-curve" style="max-width: 320px;">
+            <span>Light</span>
+            <div class="track"><div class="marker" style="left: 55%" data-label="Full City"></div></div>
+            <span>Dark</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="spec-sheet">
+        <div class="spec-header">
+          <h3>Yirgacheffe Kochere — Ethiopia</h3>
+          <span class="price">$24 / 340g</span>
+        </div>
+        <div class="spec-body">
+          <dl class="spec-grid">
+            <div><dt>Process</dt><dd>Honey</dd></div>
+            <div><dt>Elevation</dt><dd>1,950m</dd></div>
+            <div><dt>Variety</dt><dd>Heirloom</dd></div>
+            <div><dt>Roast level</dt><dd>Cinnamon</dd></div>
+          </dl>
+          <p style="margin-bottom: 18px;">Peach and honeysuckle with bright, clean acidity. A high-clarity cup — try it as a cold brew.</p>
+          <div class="roast-curve" style="max-width: 320px;">
+            <span>Light</span>
+            <div class="track"><div class="marker" style="left: 10%" data-label="Cinnamon"></div></div>
+            <span>Dark</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="spec-sheet">
+        <div class="spec-header">
+          <h3>San Sebastián — Huehuetenango, Guatemala</h3>
+          <span class="price">$21 / 340g</span>
+        </div>
+        <div class="spec-body">
+          <dl class="spec-grid">
+            <div><dt>Process</dt><dd>Washed</dd></div>
+            <div><dt>Elevation</dt><dd>1,650m</dd></div>
+            <div><dt>Variety</dt><dd>Bourbon</dd></div>
+            <div><dt>Roast level</dt><dd>Vienna</dd></div>
+          </dl>
+          <p style="margin-bottom: 18px;">Cocoa and toasted almond, low acidity, heavier body. A reliable everyday drip coffee.</p>
+          <div class="roast-curve" style="max-width: 320px;">
+            <span>Light</span>
+            <div class="track"><div class="marker" style="left: 74%" data-label="Vienna"></div></div>
+            <span>Dark</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="roast-curve" style="max-width: 280px;">
+      <span>Light</span>
+      <div class="track"><div class="marker" style="left: 52%"></div></div>
+      <span>Dark</span>
+    </div>
+    <div class="foot-links">
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="fine">© 2026 Meridian Coffee Roasters</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

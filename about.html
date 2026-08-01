@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Meridian Coffee Roasters</title>
+<meta name="description" content="How Meridian Coffee Roasters sources, roasts, and evaluates its coffee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Meridian <small>Coffee Roasters</small></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom: 48px;">
+    <div class="wrap">
+      <div class="eyebrow">Our story</div>
+      <h1 style="font-size: clamp(2.2rem, 5vw, 3.6rem);">Started with one bag of Colombian caturra in 2019.</h1>
+      <p class="lede">Meridian began as a single home roaster with a two-kilo drum in a garage. Seven years later we still roast in small batches — we've just gotten better at finding the farms.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="tag">How we work</div>
+          <h2>From cherry to cup, four steps we don't skip</h2>
+        </div>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="num">Source</span>
+          <h3>Cup at origin</h3>
+          <p>Our green buyer travels to each farm during harvest and cups the lot before it's purchased — never sight-unseen.</p>
+        </article>
+        <article class="card">
+          <span class="num">Roast</span>
+          <h3>Log every curve</h3>
+          <p>Each batch is roasted to a written profile, charted from first crack to drop, and archived with the lot.</p>
+        </article>
+        <article class="card">
+          <span class="num">Cup</span>
+          <h3>Taste before we ship</h3>
+          <p>Every roast is cupped blind against its own profile the same day, before a single bag goes out the door.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-paper">
+    <div class="wrap grid-2">
+      <div>
+        <div class="tag">Our farms</div>
+        <h2>Long relationships, not spot-market lots</h2>
+        <p>We work with four producers we've bought from for at least three seasons: two smallholder cooperatives in Yirgacheffe and Guji, Ethiopia; a family farm in Huila, Colombia; and a cooperative in Huehuetenango, Guatemala. Prices are negotiated each season and published on the spec sheet for every lot we sell.</p>
+      </div>
+      <ul class="visit-list" style="color: var(--ink);">
+        <li>
+          <span class="label">Guji, Ethiopia</span>
+          Buying since 2020 · washed & natural lots
+        </li>
+        <li>
+          <span class="label">Huila, Colombia</span>
+          Buying since 2021 · natural & honey lots
+        </li>
+        <li>
+          <span class="label">Huehuetenango, Guatemala</span>
+          Buying since 2023 · washed lots
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="tag">Roasting philosophy</div>
+          <h2>We roast to the bean, not to a house style</h2>
+        </div>
+      </div>
+      <p style="max-width: 60ch;">A washed Yirgacheffe and a natural Huila don't want the same curve. We adjust charge temperature, development time, and drop point per lot — which is why our roast levels span the full range below, rather than clustering in the middle.</p>
+      <div class="roast-curve" style="max-width: 520px; margin-top: 28px;">
+        <span>Light</span>
+        <div class="track">
+          <div class="marker" style="left: 22%" data-label="Ethiopia lots"></div>
+          <div class="marker" style="left: 58%" data-label="Colombia lots"></div>
+          <div class="marker" style="left: 78%" data-label="Guatemala lots"></div>
+        </div>
+        <span>Dark</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="roast-curve" style="max-width: 280px;">
+      <span>Light</span>
+      <div class="track"><div class="marker" style="left: 52%"></div></div>
+      <span>Dark</span>
+    </div>
+    <div class="foot-links">
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="fine">© 2026 Meridian Coffee Roasters</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
