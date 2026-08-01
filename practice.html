@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice — Docket</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="dashboard.html">Docket <small>Bar Prep</small></a>
+    <div class="header-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="practice.html" aria-current="page">Practice</a>
+      <span class="fine" id="user-email"></span>
+      <button class="btn btn-ghost btn-sm" id="logout-btn">Log out</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1 style="font-size: 1.8rem; margin-bottom: 6px;">Practice questions</h1>
+    <p style="margin-bottom: 24px;">Original questions written in Texas UBE format. Pick an answer, hit submit, and the correct choice will light up green with a full explanation below.</p>
+
+    <div class="q-type-toggle">
+      <button class="btn btn-ghost active" id="type-mbe">MBE-style</button>
+      <button class="btn btn-ghost" id="type-mee">MEE-style essays</button>
+    </div>
+
+    <div class="subject-filter" id="subject-filter"></div>
+
+    <div id="question-stage"></div>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabase-client.js"></script>
+<script src="questions.js"></script>
+<script src="practice.js"></script>
+</body>
+</html>
