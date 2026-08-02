@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Docket</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="dashboard.html">Docket <small>Bar Prep</small></a>
+    <div class="header-nav">
+      <a href="dashboard.html" aria-current="page">Dashboard</a>
+      <a href="practice.html">Practice</a>
+      <span class="fine" id="user-email"></span>
+      <button class="btn btn-ghost btn-sm" id="logout-btn">Log out</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap dash-grid">
+    <div>
+      <div class="panel">
+        <div class="tag">Countdown</div>
+        <h2>Time until test day</h2>
+        <div id="countdown-box"></div>
+        <form id="set-date-form" class="date-row">
+          <input type="date" id="test-date-input">
+          <button type="submit" class="btn btn-primary btn-sm">Save date</button>
+        </form>
+      </div>
+
+      <div class="panel">
+        <div class="tag">Tasks</div>
+        <h2>To-do</h2>
+        <form id="todo-add-form" class="todo-add">
+          <input type="text" id="todo-input" placeholder="e.g. Finish Evidence flashcards">
+          <button type="submit" class="btn btn-primary btn-sm">Add</button>
+        </form>
+        <ul class="todo-list" id="todo-list"></ul>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="tag">Subject tracker</div>
+      <h2>Where to focus</h2>
+      <p style="font-size: 0.85rem; margin-bottom: 20px;">Built from your practice question results, weakest first.</p>
+      <div id="subject-tracker"></div>
+      <a href="practice.html" class="btn btn-ghost btn-sm" style="margin-top: 20px;">Go practice →</a>
+    </div>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabase-client.js"></script>
+<script src="questions.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
