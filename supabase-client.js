@@ -2,7 +2,7 @@
    Paste your own project's values here — find them in your
    Supabase dashboard under Project Settings > API.
    ========================================================= */
-const SUPABASE_URL = "https://wrfnhvauxnkdnsnzswcc.supabase.co/rest/v1/";
+const SUPABASE_URL = "https://wrfnhvauxnkdnsnzswcc.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndyZm5odmF1eG5rZG5zbnpzd2NjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU2MjA1MjQsImV4cCI6MjEwMTE5NjUyNH0.iLkrVwQDQtXAyKFPJv17nyjrjxzD4J3SnInSJpwlGps";
 
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
